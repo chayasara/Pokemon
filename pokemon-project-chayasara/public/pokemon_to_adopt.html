@@ -1,0 +1,60 @@
+<body style="background-color: FFFF66;">
+<style>.content {max-width: 650px; margin: auto;}</style>
+<style>.submit {
+  background-color: blue; /* Green */
+  border: none;
+  color: yellow;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;}</style>
+
+
+<div class="content">
+    <div class="header">
+      <h1 style="color:blue; font-size:50px; font-family:algerian; ">POKEMONS TO ADOPT</h1>
+    </div>
+
+
+<form action="http://localhost:3000/pokemons/adopt_by_id" method="get">
+    <label for="pid" style="font-size:25px; color:blue;">Pokemon Id:</label>
+    <input type="text" id="pid" name="pid"><br><br>
+    <label for="trainer" style="font-size:25px; color:blue;">Trainer Name:</label>
+    <input type="text" id="trainer" name="trainer"><br><br>
+    <div class="submit">
+    <input type="submit" value="adopt" />
+    </div>
+</form>
+
+
+
+
+<div class="header">
+  <h2 style="color:blue;">Pick a pokemon to save:</h2>
+</div>
+
+
+<table border="1">
+
+    <thead>
+        <tr>
+            {% for col in colnames %}
+            <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for record in records %}
+        <tr>
+            {% for col in colnames %}
+            <td>{{ record[col] }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</div>
+
+</body>
